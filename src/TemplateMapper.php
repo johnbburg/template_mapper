@@ -8,7 +8,7 @@
 namespace Drupal\template_mapper;
 
 
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Defines the Template mapper service.
@@ -30,10 +30,10 @@ class TemplateMapper {
   /**
    * Constructor.
    *
-   * @param EntityManagerInterface $entity_manager
+   * @param EntityTypeManagerInterface $entity_manager
    *   The entity manager.
    */
-  public function __construct(EntityManagerInterface $entity_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_manager) {
     $this->entityManager = $entity_manager;
   }
 

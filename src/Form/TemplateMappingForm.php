@@ -58,17 +58,19 @@ class TemplateMappingForm extends EntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Template mapping.', [
+        $this->messenger()->addStatus($this->t('Created the %label Template mapping.', [
           '%label' => $template_mapping->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Template mapping.', [
+        $this->messenger()->addStatus($this->t('Saved the %label Template mapping.', [
           '%label' => $template_mapping->label(),
         ]));
     }
-    $form_state->setRedirectUrl($template_mapping->urlInfo('collection'));
+    // TODO: Drupal Rector Notice: Please delete the following comment after you've made any necessary changes.
+    // Please confirm that `$template_mapping` is an instance of `Drupal\Core\Entity\EntityInterface`. Only the method name and not the class name was checked for this replacement, so this may be a false positive.
+    $form_state->setRedirectUrl($template_mapping->toUrl('collection'));
   }
 
 }

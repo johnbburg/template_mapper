@@ -35,7 +35,7 @@ class TemplateMapperTest extends UnitTestCase {
    */
   protected function setUp() {
 
-    $this->templateMapper = new TemplateMapper($this->getMock('Drupal\Core\Entity\EntityManagerInterface'));
+    $this->templateMapper = new TemplateMapper($this->createMock('Drupal\Core\Entity\EntityManagerInterface'));
     $this->templateMapper->setAllMappings([
       'user__administrator' => 'user__admin',
       'node__article'  => 'node__piece',
